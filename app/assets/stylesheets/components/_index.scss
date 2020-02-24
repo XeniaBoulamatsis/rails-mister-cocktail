@@ -8,19 +8,128 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  text-align: center;
+  display: block;
+  height: 400px;
+  margin-top: 70px;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 44px;
   font-weight: bold;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 32px;
   color: white;
-  opacity: .7;
+  opacity: 1;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+}
+
+.text-add {
+  font-size: 20px;
+  color: $pink;
+}
+
+a.text-delete {
+  font-size: 10px;
+  color: $purple;
+  display: flex;
+  align-items: center;
+  i {
+    margin-right: 5px
+  }
+}
+
+a.text-delete:hover {
+  opacity: 0.7;
+}
+
+
+.btn-ghost {
+  color: $pink;
+  border: 1px solid $pink;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  opacity: 0.7;
+  color: $pink;
+  text-decoration: none;
+}
+
+
+.navbar-minimalist {
+    height: 70px;
+    background: white;
+    box-shadow: 0px -2px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.botton {
+  background-color: $pink;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+}
+
+.btn-round {
+  border-radius: 50%;
+  border-color: $pink;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: $pink;
+}
+
+
+.container h3 {
+  text-align: center;
+  font-size: 24px;
+  color: $pink;
+}
+.container {
+  margin-top: 80px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+#ingredients-card {
+  margin: 20px;
+}
+
+ol {
+  margin: 20px;
+}
+
+ol p {
+  margin: 0px;
+}
+
+.fa-cocktail:hover {
+  opacity: 0.7;
+  color: $pink;
 }

@@ -1,5 +1,17 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.input :url %>
-  <%= f.button :submit %>
-<% end %>
+<div class="navbar-minimalist">
+   <div class="btn btn-round">
+    <%= link_to cocktails_path,
+    class: "text-add" do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name, class: "form-control" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: "btn btn-ghost" } %>
+    <%= f.button :submit, class: "botton" %>
+  <% end %>
+</div>
+

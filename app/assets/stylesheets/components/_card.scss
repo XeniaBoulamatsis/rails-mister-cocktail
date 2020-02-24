@@ -1,10 +1,28 @@
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   grid-gap: 16px;
+// .card {
+//   height: 200, width: 300
 // }
 
 .card-wrapper a {
   text-decoration: none;
-  margin: 0;
+  margin: 5px;
+  display: flex;
+}
+
+
+.card-title {
+  color: $purple;
+}
+
+.card img {
+  object-fit: cover;
+  height: 100%;
+}
+
+
+#ingredients-card {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding-top: 10px;
 }

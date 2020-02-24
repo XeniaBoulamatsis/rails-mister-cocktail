@@ -1,29 +1,45 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.maennersache.de/cocktails,id=33d51656,b=maennersache,w=1100,rm=sk.jpeg);">
-    <div class="container">
+  <div class="navbar-minimalist">
+   <div class="btn btn-round">
+    <%= link_to cocktails_path,
+    class: "text-add" do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+ </div>
+  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.maennersache.de/cocktails,id=33d51656,b=maennersache,w=1100,rm=sk.jpeg);">
       <h1>Misses Cocktail!</h1>
       <p>Best cocktails for people who like to get drunk 💃.</p>
-    </div>
   </div>
 
   <div class="container">
-    <h2>All cocktails</h2>
+    <h2>Menu</h2>
     <div class="row">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-3 my-3 card-wrapper">
+        <div class="col-4 my-3 card-wrapper">
           <%= link_to cocktail_path(cocktail) do %>
             <div class="card">
-              <img class="card-img-top" src="<%=cocktail.url%>"  alt="...">
-              <h5 class="card-title"><%= cocktail.name %></h5>
-              <%= link_to "Delete", cocktail_path(cocktail), class: "btn btn-secondary",
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
+              <%= cl_image_tag cocktail.photos.first.key, height: 150, width: 200, crop: :fill, class: "card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title mb-3"><%= cocktail.name %></h5>
+                <%= link_to cocktail_path(cocktail),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  class: "text-delete" do %>
+                    <i class="fa fa-trash"></i> delete
+                <% end %>
+                </div>
               </div>
           <% end %>
         </div>
       <% end %>
     </div>
     <div class="row">
-      <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-secondary" %>
+
+      <%= link_to new_cocktail_path,
+      class: "text-add btn btn-ghost" do %>
+        <i class="fas fa-plus"></i> add cocktail
+      <% end %>
+
     </div>
   </div>
 

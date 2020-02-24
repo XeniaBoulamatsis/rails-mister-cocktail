@@ -1,14 +1,18 @@
+<div class="navbar-minimalist">
+ <div class="btn btn-round">
+  <%= link_to cocktails_path, class: "text-add" do %>
+    <i class="fas fa-cocktail"></i>
+  <% end %>
+</div>
+</div>
+
+<div class="banner mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photos.first.key %>);">
+  <h1><%= @cocktail.name %></h1>
+</div>
+
 <div class="container">
-  <h1>
-    Mr Cocktail
-  </h1>
-
-  <div class="card" id="details">
-    <h2>
-      <%= @cocktail.name %>
-    </h2>
-
-    <h4>Ingredients:</h4>
+    <h3>Ingredients:</h3>
+  <div class="card" id="ingredients-card">
      <ol>
         <% @cocktail.doses.each do |dose| %>
       <li>
@@ -20,11 +24,13 @@
     </ol>
   </div>
 
+<%= link_to cocktails_path,
+  class: "btn btn-ghost" do %>
+  back to menu
+<% end %>
 
-
-  <%= link_to 'Back to list', cocktails_path, class: "btn btn-secondary" %>
-
-  <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: "btn btn-secondary" %>
-
-</div>
+<%= link_to new_cocktail_dose_path(@cocktail),
+  class: "btn btn-ghost"  do %>
+  <i class="fas fa-plus"></i> add ingredient
+<% end %>
 

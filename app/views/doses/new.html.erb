@@ -1,5 +1,16 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.button :submit %>
-<% end %>
+<div class="navbar-minimalist">
+   <div class="btn btn-round">
+    <%= link_to cocktails_path,
+    class: "text-add" do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description, class: "form-control" %>
+    <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "-- SELECT ONE --", class: "form-control"%>
+    <%= f.button :submit, class: "botton" %>
+  <% end %>
+</div>
